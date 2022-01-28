@@ -1,0 +1,26 @@
+.contact-href i{
+    margin-right: 10px;
+}
+
+.dev-icons {
+    list-style: none;
+    font-size: 5rem;
+    text-align: center;
+}
+
+.dev-icons p{
+    font-size: 14px;
+}
+
+.dev-icons li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.icon-adobe{
+    content: url('./assets/images/adobe_icon.svg');
+    display: inline;
+    width: 44px;
+    height: 44px;
+}
