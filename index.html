@@ -99,10 +99,21 @@
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
         .glass-card {
-            background: rgba(30, 31, 41, 0.4);
+            background: rgba(30, 31, 41, 0.85);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(185, 202, 202, 0.1);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        @media (max-width: 768px) {
+            .glass-card {
+                background: rgba(30, 31, 41, 0.97);
+                backdrop-filter: none;
+                -webkit-backdrop-filter: none;
+            }
+            .glass-card:active, .glass-card:hover {
+                transform: none;
+            }
         }
         .glass-card:active, .glass-card:hover {
             border-color: #00f5ff;
@@ -122,6 +133,25 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+        @media (max-width: 768px) {
+            .reveal,
+            .reveal.active {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+        }
+        section[id] {
+            scroll-margin-top: 88px;
+            scroll-margin-bottom: 110px;
+        }
+        .bottom-nav-offset {
+            padding-bottom: calc(6rem + env(safe-area-inset-bottom, 0px));
+        }
+        @media (min-width: 768px) {
+            .bottom-nav-offset {
+                padding-bottom: calc(5.5rem + env(safe-area-inset-bottom, 0px));
+            }
         }
         .timeline-line {
             height: 0%;
@@ -167,7 +197,7 @@
 </div>
 </header>
 
-<main class="w-full px-gutter max-w-container-max mx-auto pb-32">
+<main class="w-full px-gutter max-w-container-max mx-auto pb-32 max-md:pb-44">
 
 <section class="pt-20 pb-section-gap flex flex-col items-center text-center reveal" id="hero">
 <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest border border-outline-variant/30 mb-6">
@@ -573,7 +603,7 @@
 
 </main>
 
-<footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-section-gap">
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 pt-section-gap bottom-nav-offset">
 <div class="w-full px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
 <div class="flex flex-col items-center md:items-start gap-2">
 <span class="font-label-mono text-label-mono text-primary">ADITYA VIJAYVARGIA // SR. AEM DEVELOPER</span>
@@ -693,9 +723,74 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) entry.target.classList.add('active');
             });
-        }, { threshold: 0.2 });
+        }, { threshold: 0.05, rootMargin: '0px 0px 50px 0px' });
 
         document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const NAV_SECTIONS = ['hero', 'arsenal', 'experience', 'projects', 'bio'];
+        const navLinks = document.querySelectorAll('nav a');
+
+        function setActiveNavLink(sectionId) {
+            navLinks.forEach(link => {
+                const isActive = link.getAttribute('href') === `#${sectionId}`;
+                link.classList.toggle('bg-primary/20', isActive);
+                link.classList.toggle('text-primary', isActive);
+                link.classList.toggle('shadow-[0_0_15px_rgba(0,245,255,0.4)]', isActive);
+                link.classList.toggle('text-on-surface-variant', !isActive);
+            });
+        }
+
+        function getActiveSectionId() {
+            const scrollPos = window.scrollY + window.innerHeight * 0.3;
+            let activeId = NAV_SECTIONS[0];
+            for (const id of NAV_SECTIONS) {
+                const section = document.getElementById(id);
+                if (section && section.offsetTop <= scrollPos) {
+                    activeId = id;
+                }
+            }
+            return activeId;
+        }
+
+        function updateActiveNav() {
+            setActiveNavLink(getActiveSectionId());
+        }
+
+        function activateVisibleReveals() {
+            document.querySelectorAll('.reveal:not(.active)').forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.95 && rect.bottom > 0) {
+                    el.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', () => {
+            activateVisibleReveals();
+            updateActiveNav();
+        }, { passive: true });
+        window.addEventListener('load', () => {
+            activateVisibleReveals();
+            updateActiveNav();
+        });
+        window.addEventListener('resize', updateActiveNav);
+        setTimeout(() => {
+            activateVisibleReveals();
+            updateActiveNav();
+        }, 800);
+
+        navLinks.forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const sectionId = this.getAttribute('href').slice(1);
+                const target = document.getElementById(sectionId);
+                if (!target) return;
+                setActiveNavLink(sectionId);
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.classList.add('active');
+                setTimeout(updateActiveNav, 500);
+            });
+        });
 
         const timelineObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -724,31 +819,6 @@
             });
         });
 
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        const navObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const id = entry.target.getAttribute('id');
-                    const navLink = document.querySelector(`nav a[href="#${id}"]`);
-                    if (navLink) {
-                        document.querySelectorAll('nav a').forEach(a => {
-                            a.classList.remove('bg-primary/20', 'text-primary', 'shadow-[0_0_15px_rgba(0,245,255,0.4)]');
-                            a.classList.add('text-on-surface-variant');
-                        });
-                        navLink.classList.add('bg-primary/20', 'text-primary', 'shadow-[0_0_15px_rgba(0,245,255,0.4)]');
-                        navLink.classList.remove('text-on-surface-variant');
-                    }
-                }
-            });
-        }, { threshold: 0.3 });
-
-        document.querySelectorAll('section').forEach(section => navObserver.observe(section));
     </script>
 </body>
 </html>

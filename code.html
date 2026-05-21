@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+
+<html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ADITYA J. // DIGITAL_ARCHITECT</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#f6d1ff",
+                    "outline": "#849495",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e3e1ef",
+                    "surface-bright": "#383843",
+                    "on-primary": "#003739",
+                    "surface-container": "#1e1f29",
+                    "on-secondary-fixed": "#23005b",
+                    "on-secondary": "#3c0090",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#00dce5",
+                    "surface-container-low": "#1a1b24",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e3e1ef",
+                    "primary": "#e9feff",
+                    "tertiary-fixed-dim": "#ecb2ff",
+                    "inverse-on-surface": "#2f303a",
+                    "inverse-surface": "#e3e1ef",
+                    "on-primary-container": "#006c71",
+                    "secondary-container": "#7000ff",
+                    "surface-container-highest": "#33343e",
+                    "outline-variant": "#3a494a",
+                    "on-surface-variant": "#b9caca",
+                    "surface-variant": "#33343e",
+                    "surface": "#12131c",
+                    "on-primary-fixed-variant": "#004f53",
+                    "on-tertiary": "#520071",
+                    "on-tertiary-fixed": "#320047",
+                    "primary-container": "#00f5ff",
+                    "on-secondary-container": "#ddcdff",
+                    "surface-dim": "#12131c",
+                    "primary-fixed": "#63f7ff",
+                    "secondary-fixed-dim": "#d1bcff",
+                    "on-secondary-fixed-variant": "#5700c9",
+                    "tertiary": "#fff8fb",
+                    "on-primary-fixed": "#002021",
+                    "secondary": "#d1bcff",
+                    "surface-container-lowest": "#0d0e17",
+                    "inverse-primary": "#00696e",
+                    "surface-tint": "#00dce5",
+                    "background": "#12131c",
+                    "on-tertiary-container": "#9d00d5",
+                    "surface-container-high": "#282933",
+                    "secondary-fixed": "#e9ddff",
+                    "on-tertiary-fixed-variant": "#74009f",
+                    "tertiary-fixed": "#f8d8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-xxl": ["Space Grotesk"],
+                    "body-md": ["Manrope"],
+                    "headline-lg-mobile": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xxl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 31, 41, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(185, 202, 202, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:active, .glass-card:hover {
+            border-color: #00f5ff;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+            transform: scale(1.02);
+        }
+        .terminal-typewriter::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        /* Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Timeline animation */
+        .timeline-line {
+            height: 0%;
+            transition: height 1s ease-out;
+        }
+        .timeline-marker {
+            transform: scale(0);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .timeline-marker.active {
+            transform: scale(1);
+        }
+
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background: radial-gradient(circle at top right, rgba(112, 0, 255, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(0, 245, 255, 0.1), #12131c);
+        }
+
+        .magnetic-wrap {
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<canvas id="bg-canvas"></canvas>
+<header class="docked full-width top-0 sticky z-50 bg-surface/40 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h1 class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary dark:text-primary-fixed">DIGITAL_ARCHITECT</h1>
+</div>
+<button class="font-label-mono text-label-mono px-6 py-2 border border-primary/30 rounded-full hover:bg-primary/10 transition-all duration-300 active:scale-95 text-primary">CONTACT</button>
+</div>
+</header>
+<main class="w-full px-gutter max-w-container-max mx-auto pb-32">
+<section class="pt-20 pb-section-gap flex flex-col items-center text-center reveal" id="hero">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest border border-outline-variant/30 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono text-label-mono text-primary uppercase">AVAILBLE_FOR_NEXT_MISSION</span>
+</div>
+<h2 class="font-headline-xxl text-[40px] md:text-headline-xxl mb-6 leading-tight h-[150px] md:h-auto" id="typewriter-headline"></h2>
+<p class="max-w-2xl font-body-md text-on-surface-variant mb-10">
+                To obtain a challenging position with excellent career opportunities in the areas of design, development and architecture in Client Server, Enterprise Web and Mobile applications Using Java and Adobe Experience Manager (AEM).
+            </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="magnetic-wrap">
+<a class="px-8 py-4 bg-primary text-on-primary rounded-full font-label-mono font-bold hover:shadow-[0_0_20px_rgba(0,245,255,0.4)] transition-all duration-300 inline-block" href="#projects">VIEW_SYSTEMS</a>
+</div>
+<a class="px-8 py-4 glass-card border-primary/20 text-primary rounded-full font-label-mono font-bold hover:bg-surface-variant transition-all duration-300" href="#">DOWNLOAD_V1.PDF</a>
+</div>
+</section>
+<section class="py-section-gap reveal" id="arsenal">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">TECH_ARSENAL</h3>
+<span class="font-label-mono text-on-surface-variant opacity-50">V7.0.2</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">data_object</span>
+<div>
+<p class="font-label-mono text-primary text-xs mb-1">PROGRAMMING</p>
+<p class="font-headline-lg text-lg">Java / Python</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-secondary">layers</span>
+<div>
+<p class="font-label-mono text-secondary text-xs mb-1">PLATFORM</p>
+<p class="font-headline-lg text-lg">Adobe AEM 6.5</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">terminal</span>
+<div>
+<p class="font-label-mono text-tertiary-fixed-dim text-xs mb-1">CLIENT_SIDE</p>
+<p class="font-headline-lg text-lg">JS / jQuery / CSS</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-error">database</span>
+<div>
+<p class="font-label-mono text-error text-xs mb-1">STORAGE</p>
+<p class="font-headline-lg text-lg">SQL Server / MySQL</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap reveal" id="experience">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-secondary pl-4 mb-12">PROFESSIONAL_CONTOUR</h3>
+<div class="space-y-12 relative">
+<!-- Vertical Progress Line -->
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 -translate-x-1/2">
+<div class="timeline-line absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-secondary to-tertiary-fixed-dim origin-top" id="timeline-progress"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-l-2 border-primary">
+<span class="font-label-mono text-primary mb-2 block">MAY 23 – PRESENT</span>
+<h4 class="font-headline-lg text-2xl mb-1">Technical Lead</h4>
+<p class="text-on-surface-variant font-medium mb-4">Ranosys</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">circle</span> Architecting complex AEM solutions and guiding high-performance teams.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full ring-4 ring-primary/20 z-10 shadow-[0_0_15px_rgba(0,245,255,0.6)]"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-r-2 border-secondary">
+<span class="font-label-mono text-secondary mb-2 block">JAN 21 – MAY 23</span>
+<h4 class="font-headline-lg text-2xl mb-1">Senior Associate Technology</h4>
+<p class="text-on-surface-variant font-medium mb-4">Publicis Sapient</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-secondary">circle</span> Delivered scalable content management frameworks for global clients.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary rounded-full ring-4 ring-secondary/20 z-10 shadow-[0_0_15px_rgba(112,0,255,0.6)]"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-l-2 border-tertiary-fixed-dim">
+<span class="font-label-mono text-tertiary-fixed-dim mb-2 block">FEB 20 – JAN 21</span>
+<h4 class="font-headline-lg text-2xl mb-1">Senior Software Engineer</h4>
+<p class="text-on-surface-variant font-medium mb-4">To The New</p>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-tertiary-fixed-dim rounded-full ring-4 ring-tertiary-fixed-dim/20 z-10"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
+</div>
+</section>
+<section class="py-section-gap reveal" id="projects">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-tertiary-fixed pl-4 mb-12">FEATURED_SYSTEMS</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="group relative glass-card rounded-2xl overflow-hidden hover:border-primary/40">
+<div class="h-48 overflow-hidden">
+<img alt="Digital Architecture Visualization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60" data-alt="A futuristic digital network visualization featuring glowing blue data lines and intricate nodes representing complex web architecture and server communication. The style is dark and immersive with deep indigo backgrounds and high-contrast cyan highlights, evoking a sense of advanced engineering and digital sophistication." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUi6cIopr2h8BoFALoCSvOXXzWv87nDzQdLy7WEEgtw4Z1oq2Hc_IyqAO2oWaO7gvJvn8txsPyk9fX29wh79prIKUvFYlgFUiENBo5ySnrAbaUHxoorfUtPBbUApiZ4QV480qlKmsMnTgCgowwMK6R0S5Y9pWB_0B95md2IZEj54uEQB-APdZ4x7Lnx4m5rGs_rTYJdHMLZYnfBgrjbuM8Iz-LSyMWAr8gWSFGpYqou5GhutE6vLKSKpuKCWTb4kDOPGSfJD6iw6Hw"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.5</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">GRAPHQL</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4 uppercase">Energy Market Authority</h4>
+<p class="text-on-surface-variant text-sm mb-6">Developed complex Chart Components using AEM and chart.js. Integrated D3.js for custom Map Components and used GraphQL queries for efficient content fetching.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-xs text-primary">ROLE: TECH_LEAD</span>
+<span class="material-symbols-outlined text-primary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+<div class="group relative glass-card rounded-2xl overflow-hidden hover:border-secondary/40">
+<div class="h-48 overflow-hidden">
+<img alt="Logistics Network Visualization" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-60" data-alt="An abstract visualization of global logistics and supply chain systems featuring glowing paths over a darkened world map. The aesthetic uses neon purple and electric blue lighting to highlight connectivity and flow, matching a high-tech engineering portfolio's dark mode visual identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEkxCsjVP7y3XIseT1IG-gyIuxw-9ZHrCfxM7NgCv_8FE3ifrrt3rSOshFqFA2jEIFsOdEdsrSpRsoocSprqJcxS92PjpV6J6pOlZ079TirhK3TG-re6Qjkw_NMFTYdrKEtNRJjQxBkLAh9N2-SpKqEfB6BUXJsTiL30ZF8_7ZI3XlMszBlhFfXf8qyoJmINxcSbTIw8MQFNYqdtRNnsnqFaBN9q-I0JqHN7V7IHmRySWap6UPNourq1O-uP-RuC3pvkZ3A1NvoHcA"/>
+</div>
+<div class="p-8">
+<div class="flex gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">JAVA</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">ACL</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4 uppercase">Parcel Delivery Brand Portal</h4>
+<p class="text-on-surface-variant text-sm mb-6">Engineered a portal for licensed assets using AEM 6.5. Managed ACL permissions programmatically and implemented custom backend workflow steps for data processing.</p>
+<div class="flex items-center justify-between">
+<span class="font-label-mono text-xs text-secondary">ROLE: SR_AEM_DEV</span>
+<span class="material-symbols-outlined text-secondary group-hover:translate-x-2 transition-transform">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-section-gap reveal" id="bio">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">PERSONAL_INFO</h3>
+<div class="grid grid-cols-1 gap-4 font-label-mono">
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">NATIONALITY</span>
+<span class="text-on-surface">INDIAN</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">LANGUAGES</span>
+<span class="text-on-surface">ENGLISH, HINDI</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">LOCATION</span>
+<span class="text-on-surface">JAIPUR / REMOTE</span>
+</div>
+</div>
+</div>
+<div class="glass-card p-12 rounded-3xl text-center flex flex-col items-center gap-6 border-dashed border-2 border-primary/20">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h4 class="font-headline-lg">LET'S_BUILD_THE_FUTURE</h4>
+<p class="text-on-surface-variant text-sm">Always open for high-performance SaaS opportunities and complex AEM architectural consultations.</p>
+<div class="magnetic-wrap w-full">
+<button class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl hover:scale-[1.02] transition-transform">INITIATE_HANDSHAKE</button>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-section-gap">
+<div class="w-full px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-label-mono text-label-mono text-primary">DIGITAL_ARCHITECT // ADITYA_J.</span>
+<span class="font-body-md text-body-md text-secondary dark:text-secondary-fixed">© 2024 ENGINEER_PORTFOLIO // BUILT_FOR_PRECISION</span>
+</div>
+<div class="flex gap-6">
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-label-mono text-sm" href="#">GITHUB</a>
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-label-mono text-sm" href="#">LINKEDIN</a>
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-label-mono text-sm" href="#">RESUME</a>
+</div>
+</div>
+</footer>
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-around gap-4 px-6 py-2 bg-surface-container-low/60 backdrop-blur-xl border border-outline-variant/30 shadow-xl rounded-full w-auto min-w-[320px]">
+<a class="bg-primary/20 text-primary p-3 rounded-full shadow-[0_0_15px_rgba(0,245,255,0.4)] transition-all" href="#hero">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#arsenal">
+<span class="material-symbols-outlined">history_edu</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#experience">
+<span class="material-symbols-outlined">layers</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#projects">
+<span class="material-symbols-outlined">rocket_launch</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#bio">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</nav>
+<script>
+        // 1. Interactive Background (Canvas Particles)
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
+
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const count = window.innerWidth < 768 ? 40 : 100;
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                    opacity: Math.random() * 0.5
+                });
+            }
+        }
+
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+
+                // Wrap around
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+
+                // Mouse interaction
+                if (mouse.x !== null) {
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        p.x -= dx * 0.02;
+                        p.y -= dy * 0.02;
+                    }
+                }
+
+                ctx.fillStyle = `rgba(0, 245, 255, ${p.opacity})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('mousemove', e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('touchstart', e => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        });
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animateCanvas();
+
+        // 2. Typewriter Effect
+        const headlineText = "ADITYA J.\nPRECISION ENGINEER";
+        const headlineEl = document.getElementById('typewriter-headline');
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < headlineText.length) {
+                const char = headlineText.charAt(charIndex);
+                if (char === '\n') {
+                    headlineEl.innerHTML += '<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed via-secondary to-tertiary-fixed">';
+                } else {
+                    headlineEl.innerHTML += char;
+                }
+                charIndex++;
+                setTimeout(typeWriter, 100);
+            } else {
+                headlineEl.innerHTML += '</span>';
+                headlineEl.classList.add('terminal-typewriter');
+            }
+        }
+        window.onload = () => {
+            setTimeout(typeWriter, 500);
+        };
+
+        // 3. Scroll Reveals & Timeline Logic
+        const observerOptions = { threshold: 0.2 };
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        // Timeline Progress
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const marker = entry.target.querySelector('.timeline-marker');
+                    if(marker) marker.classList.add('active');
+                    
+                    // Calculate progress based on scroll
+                    const items = document.querySelectorAll('.timeline-item');
+                    const index = Array.from(items).indexOf(entry.target);
+                    const progress = ((index + 1) / items.length) * 100;
+                    document.getElementById('timeline-progress').style.height = `${progress}%`;
+                }
+            });
+        }, { threshold: 0.8 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => timelineObserver.observe(item));
+
+        // 4. Magnetic Buttons
+        const magnetics = document.querySelectorAll('.magnetic-wrap');
+        magnetics.forEach(wrap => {
+            wrap.addEventListener('mousemove', e => {
+                const rect = wrap.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                wrap.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            wrap.addEventListener('mouseleave', () => {
+                wrap.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        // 5. Smooth Nav Interaction (Update from existing)
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`nav a[href="#${id}"]`);
+                    if (navLink) {
+                        document.querySelectorAll('nav a').forEach(a => {
+                            a.classList.remove('bg-primary/20', 'text-primary', 'shadow-[0_0_15px_rgba(0,245,255,0.4)]');
+                            a.classList.add('text-on-surface-variant');
+                        });
+                        navLink.classList.add('bg-primary/20', 'text-primary', 'shadow-[0_0_15px_rgba(0,245,255,0.4)]');
+                        navLink.classList.remove('text-on-surface-variant');
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('section').forEach(section => navObserver.observe(section));
+    </script>
+</body></html>
