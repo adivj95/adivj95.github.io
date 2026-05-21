@@ -1,329 +1,754 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html class="dark scroll-smooth" lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
-
-  <title>Aditya Vijayvargia</title>  
-
-<link href="./main.d8e0d294.css" rel="stylesheet">
-
-<link href="./site.css" rel="stylesheet"></head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Aditya Vijayvargia — Senior AEM Developer at Newfold with 8+ years building and operating enterprise web platforms." name="description"/>
+<title>Aditya Vijayvargia // Senior AEM Developer</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&amp;family=Manrope:wght@400;500;600&amp;family=Space+Grotesk:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-container": "#f6d1ff",
+                    "outline": "#849495",
+                    "error-container": "#93000a",
+                    "on-error-container": "#ffdad6",
+                    "on-background": "#e3e1ef",
+                    "surface-bright": "#383843",
+                    "on-primary": "#003739",
+                    "surface-container": "#1e1f29",
+                    "on-secondary-fixed": "#23005b",
+                    "on-secondary": "#3c0090",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#00dce5",
+                    "surface-container-low": "#1a1b24",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e3e1ef",
+                    "primary": "#e9feff",
+                    "tertiary-fixed-dim": "#ecb2ff",
+                    "inverse-on-surface": "#2f303a",
+                    "inverse-surface": "#e3e1ef",
+                    "on-primary-container": "#006c71",
+                    "secondary-container": "#7000ff",
+                    "surface-container-highest": "#33343e",
+                    "outline-variant": "#3a494a",
+                    "on-surface-variant": "#b9caca",
+                    "surface-variant": "#33343e",
+                    "surface": "#12131c",
+                    "on-primary-fixed-variant": "#004f53",
+                    "on-tertiary": "#520071",
+                    "on-tertiary-fixed": "#320047",
+                    "primary-container": "#00f5ff",
+                    "on-secondary-container": "#ddcdff",
+                    "surface-dim": "#12131c",
+                    "primary-fixed": "#63f7ff",
+                    "secondary-fixed-dim": "#d1bcff",
+                    "on-secondary-fixed-variant": "#5700c9",
+                    "tertiary": "#fff8fb",
+                    "on-primary-fixed": "#002021",
+                    "secondary": "#d1bcff",
+                    "surface-container-lowest": "#0d0e17",
+                    "inverse-primary": "#00696e",
+                    "surface-tint": "#00dce5",
+                    "background": "#12131c",
+                    "on-tertiary-container": "#9d00d5",
+                    "surface-container-high": "#282933",
+                    "secondary-fixed": "#e9ddff",
+                    "on-tertiary-fixed-variant": "#74009f",
+                    "tertiary-fixed": "#f8d8ff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "section-gap": "80px",
+                    "gutter": "24px",
+                    "container-max": "1200px",
+                    "unit": "4px"
+            },
+            "fontFamily": {
+                    "headline-lg": ["Space Grotesk"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-xxl": ["Space Grotesk"],
+                    "body-md": ["Manrope"],
+                    "headline-lg-mobile": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-mono": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-xxl": ["64px", {"lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(30, 31, 41, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(185, 202, 202, 0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:active, .glass-card:hover {
+            border-color: #00f5ff;
+            box-shadow: 0 0 20px rgba(0, 245, 255, 0.2);
+            transform: scale(1.02);
+        }
+        .terminal-typewriter::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+        @keyframes blink { 50% { opacity: 0; } }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .timeline-line {
+            height: 0%;
+            transition: height 1s ease-out;
+        }
+        .timeline-marker {
+            transform: scale(0);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .timeline-marker.active {
+            transform: scale(1);
+        }
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background: radial-gradient(circle at top right, rgba(112, 0, 255, 0.15), transparent),
+                        radial-gradient(circle at bottom left, rgba(0, 245, 255, 0.1), #12131c);
+        }
+        .magnetic-wrap {
+            display: inline-block;
+            transition: transform 0.3s ease-out;
+        }
+        .project-card:hover {
+            transform: scale(1.01);
+        }
+    </style>
 </head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container min-h-screen">
+<canvas id="bg-canvas"></canvas>
 
+<header class="docked full-width top-0 sticky z-50 bg-surface/40 backdrop-blur-md border-b border-outline-variant/20">
+<div class="flex justify-between items-center w-full px-gutter max-w-container-max mx-auto py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">terminal</span>
+<h1 class="font-headline-lg text-headline-lg font-bold tracking-tighter text-primary dark:text-primary-fixed">ADITYA V.</h1>
+</div>
+<a class="font-label-mono text-label-mono px-6 py-2 border border-primary/30 rounded-full hover:bg-primary/10 transition-all duration-300 active:scale-95 text-primary" href="#bio">CONTACT</a>
+</div>
+</header>
 
-<body class="">
-  <span class='icon-custom'></span>
-<!-- Add your content of header -->
-<div class="background-color-layer" style="background-image: url('assets/images/img-01.jpg')"
-></div>
-<main class="content-wrapper">
-  <header class="white-text-container section-container">
-    <div class="text-center">
-      <h1>I am Aditya Vijayvargia</h1>
-      <p>AEM Developer</p>
-      <p>
-        <a class="fa-icon fa-icon-2x" href="https://www.facebook.com/aditya.vijayvargia/"  target="_blank" title="">
-          <i class="fa fa-facebook"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://twitter.com/AdityaVijay04" target="_blank" title="">
-          <i class="fa fa-twitter"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://github.com/adivj95" target="_blank" title="">
-          <i class="fa fa-github"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/in/aditya-vijayvargia" target="_blank" title="">
-          <i class="fa fa-linkedin"></i>
-        </a>
-        <a class="fa-icon fa-icon-2x" href="https://www.instagram.com/aditya.vijayvargia" target="_blank" title="">
-          <i class="fa fa-instagram"></i>
-        </a>
-      </p>
-    </div>
-  </header>
+<main class="w-full px-gutter max-w-container-max mx-auto pb-32">
 
+<section class="pt-20 pb-section-gap flex flex-col items-center text-center reveal" id="hero">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-highest border border-outline-variant/30 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-mono text-label-mono text-primary uppercase">SENIOR AEM DEVELOPER // NEWFOLD</span>
+</div>
+<h2 class="font-headline-xxl text-[40px] md:text-headline-xxl mb-6 leading-tight h-[150px] md:h-auto" id="typewriter-headline"></h2>
+<p class="max-w-2xl font-body-md text-on-surface-variant mb-10">
+                Senior AEM Developer with 8+ years building and operating enterprise web platforms using Java and Adobe Experience Manager. Currently at Newfold, handling AEM backend operations for Bluehost, storefront pricing, and server maintenance.
+            </p>
+<div class="flex flex-wrap justify-center gap-4">
+<div class="magnetic-wrap">
+<a class="px-8 py-4 bg-primary text-on-primary rounded-full font-label-mono font-bold hover:shadow-[0_0_20px_rgba(0,245,255,0.4)] transition-all duration-300 inline-block" href="#projects">VIEW PROJECTS</a>
+</div>
+<a class="px-8 py-4 glass-card border-primary/20 text-primary rounded-full font-label-mono font-bold hover:bg-surface-variant transition-all duration-300" href="mailto:adivj95@gmail.com">GET IN TOUCH</a>
+</div>
+</section>
 
+<section class="py-section-gap reveal" id="profile">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4 mb-12">CAREER PROFILE</h3>
+<div class="glass-card p-8 md:p-10 rounded-2xl">
+<ul class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>8+ years in Java development and CMS, specializing in Adobe Experience Manager (AEM) 6.2–6.5.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>Proficient in Spring Boot web applications, Core Java, Servlets, JSP, and JDBC.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>Deep expertise in Apache Sling, OSGi, Felix, Jackrabbit, JCR, and CRX.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>Skilled in Sightly (HTL), HTML5, JavaScript, jQuery, CSS3, AJAX, and JSON APIs.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>Experienced in Agile, TDD, and Scrum with strong production support capabilities.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>Solid database skills across MySQL, PostgreSQL, SQL Server, and Oracle.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary shrink-0">check_circle</span>Experienced in AEM backend operations, storefront pricing integrations, and server maintenance.</li>
+</ul>
+</div>
+</section>
 
-<!-- Add your site or app content here -->
- 
- <div class="container">
-   <div class="row">
-     <div class="col-xs-12">
+<section class="py-section-gap reveal" id="arsenal">
+<div class="flex items-center justify-between mb-12">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">TECH ARSENAL</h3>
+<span class="font-label-mono text-on-surface-variant opacity-50">8+ YRS</span>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-primary">data_object</span>
+<div>
+<p class="font-label-mono text-primary text-xs mb-1">PROGRAMMING</p>
+<p class="font-headline-lg text-lg">Java / J2EE / Python</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-secondary">layers</span>
+<div>
+<p class="font-label-mono text-secondary text-xs mb-1">AEM PLATFORM</p>
+<p class="font-headline-lg text-lg">AEM 6.2–6.5 / Sling / OSGi</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-tertiary-fixed-dim">terminal</span>
+<div>
+<p class="font-label-mono text-tertiary-fixed-dim text-xs mb-1">CLIENT SIDE</p>
+<p class="font-headline-lg text-lg">JS / HTL / jQuery / CSS</p>
+</div>
+</div>
+<div class="glass-card p-6 rounded-xl flex flex-col gap-4">
+<span class="material-symbols-outlined text-3xl text-error">database</span>
+<div>
+<p class="font-label-mono text-error text-xs mb-1">DATA &amp; TOOLS</p>
+<p class="font-headline-lg text-lg">SQL / Maven / Git</p>
+</div>
+</div>
+</div>
+<div class="mt-6 flex flex-wrap gap-2">
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">WCM</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">DAM</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Workflow</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Editable Templates</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Experience Fragments</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">GraphQL</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Dispatcher</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Spring Boot</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">JUnit</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">JIRA</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Jenkins</span>
+<span class="px-3 py-1 text-xs font-label-mono bg-surface-container-highest text-on-surface-variant border border-outline-variant/30 rounded-full">Tomcat</span>
+</div>
+</section>
 
-        <div class="card">
-          <div class="card-block">
-            <h2>About me</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <p><img src="./assets/images/img-01.jpg" class="img-responsive" alt=""></p>
-              </div>
-              <div class="col-md-8">
+<section class="py-section-gap reveal" id="experience">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-secondary pl-4 mb-12">PROFESSIONAL EXPERIENCE</h3>
+<div class="space-y-12 relative">
+<div class="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-outline-variant/30 -translate-x-1/2">
+<div class="timeline-line absolute top-0 left-0 w-full bg-gradient-to-b from-primary via-secondary to-tertiary-fixed-dim origin-top" id="timeline-progress"></div>
+</div>
 
-              <p>Hello, I'm an enthusiastic,passionate Adobe Certified Lead Developer (Adobe Experience Manager) & Spring-boot Developer with system administration experience based out of Chittorgarh, Rajasthan.</p>
-              <p>Last 5 years I have worked with complex Finanical and Risk Business, Insurance System, Parcel Delivery Services and Asset management sites</p>
-              <p><a class="contact-href" href = "mailto:adivj95@gmail.com"><i class="fa fa-envelope" style="font-size:24px" aria-hidden="true"></i>  adivj95@gmail.com</a></p>
-              <p><a class="contact-href" href="tel:+918764311990"><i class="fa fa-phone" style="font-size:24px" aria-hidden="true"></i>  +91 8764311990</a></p>
-              <a class=" btn btn-primary" href="./assets/aditya-resume.docx" download>Download resume</a>
-            </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-block">
-            <h2>Technical Skills</h2>
-            <ul class="dev-icons">
-              <li>
-                <i class=" icon-adobe"></i>
-                <p>Adobe Experience Manager</p>
-              </li>
-            </ul>
-          </div>
-        </div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-l-2 border-primary">
+<span class="font-label-mono text-primary mb-2 block">AUG 2025 – PRESENT</span>
+<h4 class="font-headline-lg text-2xl mb-1">Senior AEM Developer</h4>
+<p class="text-on-surface-variant font-medium mb-4">Newfold</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">circle</span>Handling AEM backend operations for the Bluehost website.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">circle</span>Managing pricing integrations and updates on the Storefront site.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-primary">circle</span>Performing AEM server maintenance, monitoring, and production support.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full ring-4 ring-primary/20 z-10 shadow-[0_0_15px_rgba(0,245,255,0.6)]"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
 
-        <div class="card">
-          <div class="card-block">
-            <h2>Projects</h2>
-            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
-              <div class="item active">
-                <div class="carousel-caption">
-                  <h3 class="h5">Parcel Delivery Brand Portal</h3>
-                  <p>It is a portal which have all the licensed asset of Parcel Delivery System, customer can raise requests to access those assets
-                  </p>
-                </div>
-              </div>
-              <div class="item">
-                <div class="carousel-caption">
-                  <h3 class="h5">Parcel Delivery About Site</h3>
-                  <p> It is about a site for one of the leading parcel delivery system vendors. It has all the newsletter, stories, and history about that vendor</p>
-                </div>
-              </div>
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-r-2 border-secondary">
+<span class="font-label-mono text-secondary mb-2 block">MAY 2023 – AUG 2025</span>
+<h4 class="font-headline-lg text-2xl mb-1">Technical Lead</h4>
+<p class="text-on-surface-variant font-medium mb-4">Ranosys</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-secondary">circle</span>Architected complex AEM solutions and guided high-performance delivery teams.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-secondary">circle</span>Led EMA Singapore corporate portal — charts, maps, GraphQL, ACL, and workflows.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-secondary">circle</span>Managed Git access, PR merges, production support, and team mentorship.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-secondary rounded-full ring-4 ring-secondary/20 z-10 shadow-[0_0_15px_rgba(112,0,255,0.6)]"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
 
-              <div class="item">
-                <div class="carousel-caption">
-                  <h3 class="h5">Maxlife Insurance</h3>
-                  <p> Maxlife is portal developed on AEM 6.2, which is used to fill various types of insurance mostly based on Adobe form
-                  </p>
-                </div>
-              </div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-l-2 border-tertiary-fixed-dim">
+<span class="font-label-mono text-tertiary-fixed-dim mb-2 block">JAN 2021 – MAY 2023</span>
+<h4 class="font-headline-lg text-2xl mb-1">Senior Associate Technology</h4>
+<p class="text-on-surface-variant font-medium mb-4">Publicis Sapient</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary-fixed-dim">circle</span>Delivered scalable AEM platforms for parcel delivery, insurance, and financial services clients.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary-fixed-dim">circle</span>Built Touch UI components, editable templates, MSM, dispatcher configs, and REST integrations.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-tertiary-fixed-dim">circle</span>Resolved SonarQube vulnerabilities and improved code coverage with JUnit test cases.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-tertiary-fixed-dim rounded-full ring-4 ring-tertiary-fixed-dim/20 z-10"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
 
-              <div class="item">
-                <div class="carousel-caption">
-                  <h3 class="h5">Viewpoint</h3>
-                  <p>It is a new portal developed on AEM 6.4, which supports all the secured and licensed content and functionality available in existing inform site</p>
-                </div>
-              </div>
+<div class="relative flex flex-col md:flex-row-reverse items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-r-2 border-error">
+<span class="font-label-mono text-error mb-2 block">FEB 2020 – JAN 2021</span>
+<h4 class="font-headline-lg text-2xl mb-1">Senior Software Engineer</h4>
+<p class="text-on-surface-variant font-medium mb-4">To The New</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-error">circle</span>Developed and enhanced AEM components, OSGi services, servlets, and sling models.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-error">circle</span>Integrated external REST endpoints and supported dispatcher configuration.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-error rounded-full ring-4 ring-error/20 z-10"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
 
-              <div class="item">
-                <div class="carousel-caption">
-                  <h3 class="h5">Leading Company in Financial and Risk Business</h3>
-                  <p>It is a portal developed on AEM 6.5, which show all the notifications, newsletters and content from existing SFDC site</p>
-                </div>
-              </div>
-            </div>
+<div class="relative flex flex-col md:flex-row items-center justify-between gap-8 timeline-item">
+<div class="w-full md:w-[45%] glass-card p-8 rounded-2xl border-l-2 border-outline">
+<span class="font-label-mono text-outline mb-2 block">JAN 2017 – JAN 2020</span>
+<h4 class="font-headline-lg text-2xl mb-1">System Engineer</h4>
+<p class="text-on-surface-variant font-medium mb-4">Tata Consultancy Services</p>
+<ul class="space-y-2 text-sm text-on-surface-variant">
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-outline">circle</span>Built enterprise Java applications and gained foundational experience in web development.</li>
+<li class="flex items-start gap-2"><span class="material-symbols-outlined text-xs mt-1 text-outline">circle</span>Worked across client-server architectures using J2EE, JDBC, and relational databases.</li>
+</ul>
+</div>
+<div class="timeline-marker absolute left-8 md:left-1/2 -translate-x-1/2 w-4 h-4 bg-outline rounded-full ring-4 ring-outline/20 z-10"></div>
+<div class="hidden md:block md:w-[45%]"></div>
+</div>
+</div>
+</section>
 
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-              <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-              <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-            </ol>
+<section class="py-section-gap reveal" id="projects">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-tertiary-fixed pl-4 mb-12">FEATURED PROJECTS</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-          </div>
-          </div>
-        </div>
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-primary/40 md:col-span-2">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-primary/20 via-secondary/15 to-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary/40">dns</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">Bluehost</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/20 rounded">Storefront</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Bluehost &amp; Storefront Platform</h4>
+<p class="text-on-surface-variant text-sm mb-4">Current engagement at Newfold — operating AEM backend services for Bluehost and managing pricing on the Storefront site.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• AEM backend operations for Bluehost website</li>
+<li>• Storefront pricing configuration and updates</li>
+<li>• AEM server maintenance, monitoring, and production support</li>
+</ul>
+<span class="font-label-mono text-xs text-primary">ROLE: SR. AEM DEVELOPER · NEWFOLD</span>
+</div>
+</div>
 
-        <div class="card">
-          <div class="card-block">
-            <h2>Certifications</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <a href="https://www.credly.com/badges/50c2b70b-3aa8-4caa-a15c-c01d59335224" target="_blank">
-                  <img src="./assets/images/cert-badge.png" class="img-responsive" alt="">
-                  <h3 class="h5">Adobe Certified Expert - Adobe Experience Manager Dev/Ops Engineer</h3>
-                  <p>Dec 2021-Dec 2023</p>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="https://www.credly.com/badges/e361e0fd-f8e6-4ccb-a02a-37da554a139c" target="_blank">
-                  <img src="./assets/images/cert-badge.png" class="img-responsive" alt="">
-                  <h3 class="h5">Adobe Certified Expert - Adobe Experience Manager Sites Lead Developer</h3>
-                  <p>July 2020-July 2022</p>
-                </a>
-              </div>
-              
-            </div>
-          </div>
-        </div>
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-primary/40">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary/40">energy_savings_leaf</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.5</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">GraphQL</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/20 rounded">D3.js</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Energy Market Authority</h4>
+<p class="text-on-surface-variant text-sm mb-4">Corporate portal for EMA Singapore with comprehensive energy sector information, interactive charts, and map visualizations.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• Chart components with AEM + Chart.js</li>
+<li>• Map components with D3.js</li>
+<li>• Content fragments &amp; GraphQL queries</li>
+<li>• ACL permissions, schedulers &amp; custom workflows</li>
+</ul>
+<span class="font-label-mono text-xs text-primary">ROLE: TECH LEAD</span>
+</div>
+</div>
 
-        <div class="card">
-          <div class="card-block">
-            <h2>Work</h2>
-            <div class="work-experience">
-              <h3>Publicis Sapient</h3>
-              <p>Senior Associate Technology</p>
-              <small class="date">Jan 2021- Present</small>
-            </div>
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-secondary/40">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-secondary/40">local_shipping</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.5</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">ACL</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/20 rounded">Java</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Parcel Delivery Brand Portal</h4>
+<p class="text-on-surface-variant text-sm mb-4">Licensed asset portal where customers raise requests to access parcel delivery system assets with secure permissions.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• Programmatic ACL permission management</li>
+<li>• Custom workflow process steps</li>
+<li>• Query Builder fulltext search &amp; Oak indexes</li>
+</ul>
+<span class="font-label-mono text-xs text-secondary">ROLE: SR. AEM DEVELOPER</span>
+</div>
+</div>
 
-            <div class="work-experience">
-              <h3>To The New</h3>
-              <p>Senior Software Developer</p>
-              <small class="date">Feb 2020 - Dec 2021</small>
-            </div>
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-primary/40">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-tertiary-fixed-dim/20 to-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-tertiary-fixed-dim/40">newspaper</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.5</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">MSM</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/20 rounded">REST API</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Parcel Delivery About Site</h4>
+<p class="text-on-surface-variant text-sm mb-4">Corporate site for a leading parcel delivery vendor featuring newsletters, stories, and company history across regions.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• Editable templates &amp; Touch UI components</li>
+<li>• MSM for multi-region sites</li>
+<li>• Dispatcher setup, SonarQube fixes &amp; JUnit coverage</li>
+</ul>
+<span class="font-label-mono text-xs text-primary">ROLE: SR. AEM DEVELOPER</span>
+</div>
+</div>
 
-            <div class="work-experience">
-              <h3>Tata Consultancy Services</h3>
-              <p>System Engineer</p>
-              <small class="date">Jan 2017 - Jan 2020</small>
-            </div>
-          </div>
-        </div>
-        
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-secondary/40">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-error/10 to-primary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-error/40">health_and_safety</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.2</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">Adobe Forms</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Maxlife Insurance</h4>
+<p class="text-on-surface-variant text-sm mb-4">Insurance portal built on AEM 6.2 for filling various insurance types using Adobe Forms components.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• AEM Forms component development</li>
+<li>• OSGi services, servlets, sling models &amp; schedulers</li>
+<li>• External REST integration via OSGi services</li>
+</ul>
+<span class="font-label-mono text-xs text-secondary">ROLE: SR. AEM DEVELOPER</span>
+</div>
+</div>
 
-        <div class="card">
-          <div class="card-block">
-            <h2>Education</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2012-2016</small>
-                  <h3 class="h5 date-title">Bachelor of Technology</h3>
-                  <p>Percentage - 79.6%</p>
-                  <p>Arya Institute of Engineering and Technology, Jaipur</p>
-                  <p>(Rajasthan Technical University)</p>
-                </div>
-                
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2011-2012</small>
-                  <h3 class="h5 date-title">12th</h3>
-                  <p>Percentage - 78.8%</p>
-                  <p>Guru Nanak Public School, Udaipu</p>
-                  <p>(Rajasthan Board of Secondary Education)</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="education-experience">
-                  <small class="date">2009-2010</small>
-                  <h3 class="h5 date-title">10th</h3>
-                  <p>Percentage - 73.17%</p>
-                  <p>Mod Singh Chauhan Govt. Sr. Sec. School, Kankarwa</p>
-                  <p>(Rajasthan Board of Secondary Education)</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="card">
-          <div class="card-block">
-            <h2>Language</h2>
-            <div class="row">
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">English  <small>Fluent</small></h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">Hindi  <small>Fluent</small></h3>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="language-experience">
-                  <h3 class="h5">Rajasthani  <small>Fluent</small></h3>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-primary/40">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-primary/10 to-tertiary-fixed-dim/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-primary/40">visibility</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.4</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">Spring</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Viewpoint Portal</h4>
+<p class="text-on-surface-variant text-sm mb-4">Secured portal supporting licensed content and functionality from an existing inform site, with third-party authentication.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• Asset auditing reports in CSV to external DB</li>
+<li>• Homepage revamp &amp; editable templates</li>
+<li>• Spring endpoint &amp; sitemap XML generation</li>
+</ul>
+<span class="font-label-mono text-xs text-primary">ROLE: SR. AEM DEVELOPER</span>
+</div>
+</div>
 
-        <div class="card">
-          <div class="card-block">
-            <h2>Contact</h2>
-              <p class="subTitle blog-subtitle">Discuss a project or just want to say hi? My Inbox is open for all.</p>
-              <h3 class="bio-text">Aditya Vijayvargia</h3>
-              <h3 class="bio-text">Senior AEM Developer | Adobe Certified Lead Developer  </h3>
-              <p><a class="contact-href" href = "mailto:adivj95@gmail.com"><i class="fa fa-envelope" style="font-size:24px" aria-hidden="true"></i>  adivj95@gmail.com</a></p>
-              <p><a class="contact-href" href="tel:+918764311990"><i class="fa fa-phone" style="font-size:24px" aria-hidden="true"></i>  +91 8764311990</a></p>    
-              <div class="location-div">
-                <span class="desc-prof">
-                  <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  Chittorgarh, Rajasthan, India
-                </span>
-              </div>
-            </div>
-        </div>
-       
-     </div>
-   </div>
- </div>
+<div class="group relative glass-card project-card rounded-2xl overflow-hidden hover:border-secondary/40">
+<div class="h-48 overflow-hidden bg-gradient-to-br from-secondary/20 to-error/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-6xl text-secondary/40">account_balance</span>
+</div>
+<div class="p-8">
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="px-2 py-1 text-[10px] font-label-mono bg-primary/10 text-primary border border-primary/20 rounded">AEM 6.5</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-secondary/10 text-secondary border border-secondary/20 rounded">Jenkins</span>
+<span class="px-2 py-1 text-[10px] font-label-mono bg-tertiary-fixed-dim/10 text-tertiary-fixed-dim border border-tertiary-fixed-dim/20 rounded">Adobe Cloud</span>
+</div>
+<h4 class="font-headline-lg text-2xl mb-4">Financial &amp; Risk Business Portal</h4>
+<p class="text-on-surface-variant text-sm mb-4">Enterprise portal for a leading financial and risk company with complex releases and dynamic data-driven components.</p>
+<ul class="space-y-1 text-xs text-on-surface-variant mb-6">
+<li>• Flawless go-live releases &amp; SLA-driven delivery</li>
+<li>• OOTB component extensions &amp; custom workflows</li>
+<li>• Client interaction &amp; onsite-offshore coordination</li>
+</ul>
+<span class="font-label-mono text-xs text-secondary">ROLE: SR. AEM DEVELOPER</span>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="py-section-gap reveal" id="education">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4 mb-12">EDUCATION</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-6 rounded-xl">
+<span class="font-label-mono text-primary text-xs mb-2 block">2012 – 2016</span>
+<h4 class="font-headline-lg text-lg mb-2">B.Tech</h4>
+<p class="text-on-surface-variant text-sm mb-1">Arya Institute of Engineering &amp; Technology, Jaipur</p>
+<p class="text-on-surface-variant text-xs">Rajasthan Technical University · 79.6%</p>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<span class="font-label-mono text-secondary text-xs mb-2 block">2011 – 2012</span>
+<h4 class="font-headline-lg text-lg mb-2">12th</h4>
+<p class="text-on-surface-variant text-sm mb-1">Guru Nanak Public School, Udaipur</p>
+<p class="text-on-surface-variant text-xs">Rajasthan Board · 78.8%</p>
+</div>
+<div class="glass-card p-6 rounded-xl">
+<span class="font-label-mono text-tertiary-fixed-dim text-xs mb-2 block">2009 – 2010</span>
+<h4 class="font-headline-lg text-lg mb-2">10th</h4>
+<p class="text-on-surface-variant text-sm mb-1">Mod Singh Chauhan Govt. Sr. Sec. School, Kankarwa</p>
+<p class="text-on-surface-variant text-xs">Rajasthan Board · 73.17%</p>
+</div>
+</div>
+</section>
+
+<section class="py-section-gap reveal" id="certifications">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-secondary pl-4 mb-12">CERTIFICATIONS</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<a class="glass-card p-8 rounded-2xl flex items-start gap-4 hover:border-secondary/40 transition-all" href="https://www.credly.com/badges/50c2b70b-3aa8-4caa-a15c-c01d59335224" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-4xl text-secondary shrink-0">verified</span>
+<div>
+<h4 class="font-headline-lg text-lg mb-2">Adobe Certified Expert — AEM Dev/Ops Engineer</h4>
+<p class="text-on-surface-variant text-sm">Dec 2021 – Dec 2023</p>
+</div>
+</a>
+<a class="glass-card p-8 rounded-2xl flex items-start gap-4 hover:border-primary/40 transition-all" href="https://www.credly.com/badges/e361e0fd-f8e6-4ccb-a02a-37da554a139c" target="_blank" rel="noopener noreferrer">
+<span class="material-symbols-outlined text-4xl text-primary shrink-0">verified</span>
+<div>
+<h4 class="font-headline-lg text-lg mb-2">Adobe Certified Expert — AEM Sites Lead Developer</h4>
+<p class="text-on-surface-variant text-sm">July 2020 – July 2022</p>
+</div>
+</a>
+</div>
+</section>
+
+<section class="py-section-gap reveal" id="bio">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div class="space-y-6">
+<h3 class="font-headline-lg text-headline-lg border-l-4 border-primary pl-4">PERSONAL INFO</h3>
+<div class="grid grid-cols-1 gap-4 font-label-mono">
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">NATIONALITY</span>
+<span class="text-on-surface">Indian</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">LANGUAGES</span>
+<span class="text-on-surface">English, Hindi, Rajasthani</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">LOCATION</span>
+<span class="text-on-surface">Chittorgarh, Rajasthan</span>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">EMAIL</span>
+<a class="text-primary hover:underline" href="mailto:adivj95@gmail.com">adivj95@gmail.com</a>
+</div>
+<div class="flex justify-between border-b border-outline-variant/20 py-3">
+<span class="text-outline">PHONE</span>
+<a class="text-primary hover:underline" href="tel:+918764311990">+91 8764311990</a>
+</div>
+</div>
+</div>
+<div class="glass-card p-12 rounded-3xl text-center flex flex-col items-center gap-6 border-dashed border-2 border-primary/20">
+<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<h4 class="font-headline-lg">Let's Build Something Great</h4>
+<p class="text-on-surface-variant text-sm">Open to challenging roles in design, development, and architecture for enterprise web and mobile applications using Java and AEM.</p>
+<div class="magnetic-wrap w-full">
+<a class="w-full py-4 bg-primary text-on-primary font-bold rounded-xl hover:scale-[1.02] transition-transform inline-block" href="mailto:adivj95@gmail.com">SEND A MESSAGE</a>
+</div>
+</div>
+</div>
+</section>
 
 </main>
-<footer class="footer-container white-text-container text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p><img src="./assets/images/mashup-icon.svg" alt=""></p>
-        
-        <p>©All right reserved. @aditya-vijayvargia</p>
-        <p>
-          <a class="fa-icon fa-icon-2x" href="https://www.facebook.com/aditya.vijayvargia/"  target="_blank" title="">
-            <i class="fa fa-facebook"></i>
-          </a>
-          <a class="fa-icon fa-icon-2x" href="https://twitter.com/AdityaVijay04" target="_blank" title="">
-            <i class="fa fa-twitter"></i>
-          </a>
-          <a class="fa-icon fa-icon-2x" href="https://github.com/adivj95" target="_blank" title="">
-            <i class="fa fa-github"></i>
-          </a>
-          <a class="fa-icon fa-icon-2x" href="https://www.linkedin.com/in/aditya-vijayvargia" target="_blank" title="">
-            <i class="fa fa-linkedin"></i>
-          </a>
-          <a class="fa-icon fa-icon-2x" href="https://www.instagram.com/aditya.vijayvargia" target="_blank" title="">
-            <i class="fa fa-instagram"></i>
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
+
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-section-gap">
+<div class="w-full px-gutter max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="font-label-mono text-label-mono text-primary">ADITYA VIJAYVARGIA // SR. AEM DEVELOPER</span>
+<span class="font-body-md text-body-md text-secondary dark:text-secondary-fixed">© 2026 Portfolio · Built with precision</span>
+</div>
+<div class="flex gap-6">
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-label-mono text-sm" href="https://github.com/adivj95" target="_blank" rel="noopener noreferrer">GITHUB</a>
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-label-mono text-sm" href="https://www.linkedin.com/in/aditya-vijayvargia" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+<a class="text-outline hover:text-tertiary-fixed transition-colors font-label-mono text-sm" href="mailto:adivj95@gmail.com">EMAIL</a>
+</div>
+</div>
 </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     scrollRevelation('.card');
-  });
-</script>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID 
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-center justify-around gap-4 px-6 py-2 bg-surface-container-low/60 backdrop-blur-xl border border-outline-variant/30 shadow-xl rounded-full w-auto min-w-[320px]">
+<a class="bg-primary/20 text-primary p-3 rounded-full shadow-[0_0_15px_rgba(0,245,255,0.4)] transition-all" href="#hero">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#arsenal">
+<span class="material-symbols-outlined">build</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#experience">
+<span class="material-symbols-outlined">layers</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#projects">
+<span class="material-symbols-outlined">rocket_launch</span>
+</a>
+<a class="text-on-surface-variant p-3 hover:bg-surface-variant/50 hover:text-primary transition-all rounded-full" href="#bio">
+<span class="material-symbols-outlined">mail</span>
+</a>
+</nav>
 
 <script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null };
 
---><script type="text/javascript" src="./main.bc58148c.js"></script></body>
+        function initCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            particles = [];
+            const count = window.innerWidth < 768 ? 40 : 100;
+            for (let i = 0; i < count; i++) {
+                particles.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height,
+                    size: Math.random() * 2 + 1,
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5,
+                    opacity: Math.random() * 0.5
+                });
+            }
+        }
 
+        function animateCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.speedX;
+                p.y += p.speedY;
+                if (p.x < 0) p.x = canvas.width;
+                if (p.x > canvas.width) p.x = 0;
+                if (p.y < 0) p.y = canvas.height;
+                if (p.y > canvas.height) p.y = 0;
+                if (mouse.x !== null) {
+                    const dx = mouse.x - p.x;
+                    const dy = mouse.y - p.y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        p.x -= dx * 0.02;
+                        p.y -= dy * 0.02;
+                    }
+                }
+                ctx.fillStyle = `rgba(0, 245, 255, ${p.opacity})`;
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                ctx.fill();
+            });
+            requestAnimationFrame(animateCanvas);
+        }
+
+        window.addEventListener('mousemove', e => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        });
+        window.addEventListener('touchstart', e => {
+            mouse.x = e.touches[0].clientX;
+            mouse.y = e.touches[0].clientY;
+        });
+        window.addEventListener('resize', initCanvas);
+        initCanvas();
+        animateCanvas();
+
+        const headlineText = "ADITYA VIJAYVARGIA\nSR. AEM DEVELOPER";
+        const headlineEl = document.getElementById('typewriter-headline');
+        let charIndex = 0;
+        let gradientOpen = false;
+
+        function typeWriter() {
+            if (charIndex < headlineText.length) {
+                const char = headlineText.charAt(charIndex);
+                if (char === '\n') {
+                    headlineEl.innerHTML += '<br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed via-secondary to-tertiary-fixed">';
+                    gradientOpen = true;
+                } else {
+                    headlineEl.innerHTML += char;
+                }
+                charIndex++;
+                setTimeout(typeWriter, 100);
+            } else {
+                if (gradientOpen) headlineEl.innerHTML += '</span>';
+                headlineEl.classList.add('terminal-typewriter');
+            }
+        }
+        window.addEventListener('load', () => setTimeout(typeWriter, 500));
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const marker = entry.target.querySelector('.timeline-marker');
+                    if (marker) marker.classList.add('active');
+                    const items = document.querySelectorAll('.timeline-item');
+                    const index = Array.from(items).indexOf(entry.target);
+                    const progress = ((index + 1) / items.length) * 100;
+                    document.getElementById('timeline-progress').style.height = `${progress}%`;
+                }
+            });
+        }, { threshold: 0.8 });
+
+        document.querySelectorAll('.timeline-item').forEach(item => timelineObserver.observe(item));
+
+        document.querySelectorAll('.magnetic-wrap').forEach(wrap => {
+            wrap.addEventListener('mousemove', e => {
+                const rect = wrap.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                wrap.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            wrap.addEventListener('mouseleave', () => {
+                wrap.style.transform = 'translate(0, 0)';
+            });
+        });
+
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    const navLink = document.querySelector(`nav a[href="#${id}"]`);
+                    if (navLink) {
+                        document.querySelectorAll('nav a').forEach(a => {
+                            a.classList.remove('bg-primary/20', 'text-primary', 'shadow-[0_0_15px_rgba(0,245,255,0.4)]');
+                            a.classList.add('text-on-surface-variant');
+                        });
+                        navLink.classList.add('bg-primary/20', 'text-primary', 'shadow-[0_0_15px_rgba(0,245,255,0.4)]');
+                        navLink.classList.remove('text-on-surface-variant');
+                    }
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('section').forEach(section => navObserver.observe(section));
+    </script>
+</body>
 </html>
